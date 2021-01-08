@@ -2,16 +2,15 @@ package basic;
 // its will be the god object with all basic testing
 // and implementation for more comfort
 
+import basic.interface_my.Animal;
+
 public class Basics {
     // entrance
     public static void main(String[] args) {
-        System.out.println("basic java to remember : \n");
 //        person_tester();
-
-        // string builder
 //        str_testing();
-
-        teacher_tester();
+//        teacher_tester();
+        interface_testing();
 
     }
 
@@ -59,7 +58,7 @@ public class Basics {
             return id;
         }
 
-        void speak(){
+        void speak() {
             System.out.println("i am person");
         }
     }
@@ -111,7 +110,7 @@ public class Basics {
             return "i am person and also Teacher for : " + this.lesson;
         }
 
-        void speak(){
+        void speak() {
             System.out.println("i am Teacher");
         }
     }
@@ -129,6 +128,34 @@ public class Basics {
 
 //        Teacher tec4 = new Person(32, "tech 2"); // error
 
+
+    }
+
+    // interface
+    private static class Dog implements Animal {
+        // after implementing interface Animal
+        // dog is must to implement all interface methods
+        private final String name;
+
+        public Dog(String name) {
+            this.name = name;
+        }
+
+        @Override
+        public void sleep() {
+            System.out.println("dog " + this.name + " is sleeping");
+        }
+
+        @Override
+        public void voice() {
+            System.out.println("i am barking !! ");
+        }
+    }
+
+    private static void interface_testing() {
+        Dog dog1 = new Dog("newDog");
+        dog1.sleep();
+        dog1.voice();
 
     }
 
