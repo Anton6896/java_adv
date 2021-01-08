@@ -6,10 +6,12 @@ public class Basics {
     // entrance
     public static void main(String[] args) {
         System.out.println("basic java to remember : \n");
-        person_tester();
+//        person_tester();
 
         // string builder
-        str_testing();
+//        str_testing();
+
+        teacher_tester();
 
     }
 
@@ -56,6 +58,10 @@ public class Basics {
         int get_id() {
             return id;
         }
+
+        void speak(){
+            System.out.println("i am person");
+        }
     }
 
     private static void person_tester() {
@@ -87,6 +93,41 @@ public class Basics {
         System.out.println("from sb : " + sb);
         sb.append(s1).append(s2);
         System.out.println("better sb with append : " + sb);
+
+
+    }
+
+    // inheritance
+    private static class Teacher extends Person {
+        private String lesson;
+
+        public Teacher(int age, String name, String lesson) {
+            super(age, name);
+            this.lesson = lesson;
+        }
+
+        @Override
+        public String toString() {
+            return "i am person and also Teacher for : " + this.lesson;
+        }
+
+        void speak(){
+            System.out.println("i am Teacher");
+        }
+    }
+
+    private static void teacher_tester() {
+        Person tec0 = new Person(32, "person _1");
+        System.out.println("person to person -> " + tec0);
+
+
+        Person tec1 = new Teacher(32, "tech 1", "math");
+        System.out.println("person to teacher -> " + tec1);
+
+        Teacher tec2 = new Teacher(32, "tech 2", "music");
+        System.out.println("teacher to teacher -> " + tec2);
+
+//        Teacher tec4 = new Person(32, "tech 2"); // error
 
 
     }
