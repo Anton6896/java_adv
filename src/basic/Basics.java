@@ -2,7 +2,7 @@ package basic;
 // its will be the god object with all basic testing
 // and implementation for more comfort
 
-import basic.interface_my.Animal;
+import basic.interface_my.*;
 
 public class Basics {
     // entrance
@@ -156,7 +156,6 @@ public class Basics {
         Dog dog1 = new Dog("newDog");
         dog1.sleep();
         dog1.voice();
-
     }
 
 
