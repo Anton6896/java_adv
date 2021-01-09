@@ -4,17 +4,30 @@ package basic;
 
 import basic.interface_my.*;
 
+import java.nio.charset.Charset;
+import java.util.List;
+import java.util.ArrayList;
+import java.util.Random;
+
 public class Basics {
-    // entrance
+
     public static void main(String[] args) {
+
+        int a = 123;
+        long b = a; // auto
+        int c = (int) b; // must specify  !!
+
 //        person_tester();
 //        str_testing();
 //        teacher_tester();
-        interface_testing();
+//        interface_testing();
+
+        generics_tester();
+
 
     }
 
-    // ==========   god object , classes and function in one place  =============
+    // ==========   god object , classes and function (testers) in one place  =============
 
     // cant change this
     final static double PI = 1.345;
@@ -43,6 +56,10 @@ public class Basics {
         }
 
 
+        String getName() {
+            return this.name;
+        }
+
         int get_age() {
             return this.age;
         }
@@ -59,7 +76,7 @@ public class Basics {
         }
 
         void speak() {
-            System.out.println("i am person");
+            System.out.println("i am person with name : " + this.name);
         }
     }
 
@@ -107,26 +124,46 @@ public class Basics {
 
         @Override
         public String toString() {
-            return "i am person and also Teacher for : " + this.lesson;
+            return "i am Teacher for : " + this.lesson;
         }
 
+        @Override
         void speak() {
-            System.out.println("i am Teacher");
+            System.out.println("i am Teacher name: " + super.getName());
+        }
+
+        void teach() {
+            System.out.println("i am teaching ! with name: " + super.getName());
         }
     }
 
     private static void teacher_tester() {
-        Person tec0 = new Person(32, "person _1");
-        System.out.println("person to person -> " + tec0);
 
-
+        System.out.println(" -- Person -> teacher");
         Person tec1 = new Teacher(32, "tech 1", "math");
-        System.out.println("person to teacher -> " + tec1);
-
+        tec1.speak();
+//        tec1_per.teach();  // cant accesses .teach()
+        System.out.println(" -- Teacher -> teacher");
         Teacher tec2 = new Teacher(32, "tech 2", "music");
-        System.out.println("teacher to teacher -> " + tec2);
+        tec2.speak();
+        tec2.teach();
 
 //        Teacher tec4 = new Person(32, "tech 2"); // error
+
+//        must explicitly say this is teacher downcast Person class
+
+        System.out.println("\nupcasting and downscaling teacher class");
+        Teacher t = new Teacher(32, "te", "amazing");
+        t.speak();
+        t.teach();
+
+        Person p = t; // upcast
+        p.speak();
+//        p.teach() // noy ok
+
+        Teacher t1 = (Teacher) p;
+        t1.speak();
+        t1.teach();
 
 
     }
@@ -134,7 +171,7 @@ public class Basics {
     // interface
     private static class Dog implements Animal {
         // after implementing interface Animal
-        // dog is must to implement all interface methods
+        // dog is forced to implement all interface methods
         private final String name;
 
         public Dog(String name) {
@@ -150,6 +187,11 @@ public class Basics {
         public void voice() {
             System.out.println("i am barking !! ");
         }
+
+        @Override
+        public String toStrig() {
+            return "i am dog : " + this.name;
+        }
     }
 
     private static void interface_testing() {
@@ -158,6 +200,40 @@ public class Basics {
         dog1.voice();
     }
 
+    private static void generics_tester() {
+
+//        <Generic>  <- this is the generic type og some list obj
+        List<Teacher> tech_l = new ArrayList<>();
+
+        int leftLimit = 97; // letter 'a'
+        int rightLimit = 122; // letter 'z'
+        int targetStringLength = 5;
+        Random random = new Random();
+
+        String generatedString = random.ints(leftLimit, rightLimit + 1)
+                .limit(targetStringLength)
+                .collect(StringBuilder::new, StringBuilder::appendCodePoint, StringBuilder::append)
+                .toString();
+
+        int min = 23;
+        int max = 50;
+
+        for (int i = 0; i < 4; i++) {
+            tech_l.add(
+                    new Teacher(
+                            ((int) (Math.random() * (max - min + 1) + min)),
+                            generatedString,
+                            generatedString
+                    ));
+            System.out.println(tech_l.get(i) + ", with age: " + tech_l.get(i).get_age());
+        }
+
+
+        //////////////   wild card //////////////
+
+
+
+    }
 
 }
 
