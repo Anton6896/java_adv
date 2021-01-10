@@ -5,6 +5,8 @@ package basic;
 import basic.interface_my.*;
 
 import java.nio.charset.Charset;
+import java.sql.SQLOutput;
+import java.util.Arrays;
 import java.util.List;
 import java.util.ArrayList;
 import java.util.Random;
@@ -38,10 +40,10 @@ public class Basics {
 
 //        person_tester();
 //        str_testing();
-        teacher_tester();
+//        teacher_tester();
 //        interface_testing();
 //        generics_tester();
-
+        l();
 
     }
 
@@ -263,6 +265,15 @@ public class Basics {
 
         //////////////   wild card //////////////
 
+
+    }
+
+
+    private static void l() {
+//        java print all names
+        List<String> names = Arrays.asList("name1", "name2", "name3");
+//        names.forEach(s -> System.out.println(s));  // lambda
+        names.forEach(System.out::println);  // method reference (CPP style)
 
     }
 
