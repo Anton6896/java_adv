@@ -75,19 +75,23 @@ public class SerializingFileMy {
         System.out.println("got this data : \n" + list);
     }
 
-    static void serialize_list_of_data(File file, List<?> list) throws IOException {
+    static void serialize_list_of_data(File file, List<?> list) {
+
 //        using wild card for serialization , writing objects in bin file
+        try (ObjectOutputStream oos = new ObjectOutputStream(new FileOutputStream(file))){
 
-        FileOutputStream fos = new FileOutputStream(file);
-        ObjectOutputStream oos = new ObjectOutputStream(fos);
+            System.out.println("wright start");
+            oos.writeInt(list.size()); // how many objects writen
+            for (Object p : list) {
+                oos.writeObject(p);   // write
+            }
+            System.out.println("write done");
 
-        System.out.println("wright start");
-        oos.writeInt(list.size()); // how many objects writen
-        for (Object p : list) {
-            oos.writeObject(p);   // write
+        } catch (IOException e){
+            e.printStackTrace();
         }
-        oos.close();
-        System.out.println("write done");
+
+
     }
 
     static void de_serialize_list(File file, List<Person_ser> list) throws IOException, ClassNotFoundException {
