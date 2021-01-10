@@ -29,11 +29,10 @@ public class Basics {
         System.out.println("object equality : " + (s1.equals(s3)));
 
 //        Teacher object equality check
-        Teacher t1 = new Teacher(23,"fff", "ggg");
-        Teacher t2 = new Teacher(32,"ttt", "AAA");
+        Teacher t1 = new Teacher(23, "fff", "ggg");
+        Teacher t2 = new Teacher(32, "ttt", "AAA");
+        System.out.println("t1 id:" + t1.get_id() + " -- t2 id:" + t2.get_id());
         System.out.println("teacher equality : " + (t1.is_equals(t2)));
-
-
 
 
 //        person_tester();
@@ -56,12 +55,17 @@ public class Basics {
         private String name;
         public static String description;
         // id will count all person classes !
-        private static int id = 0;
+        private int id = 0;
+        private static int counter = 0;
 
         public Person(int age, String name) {
             this.age = age;
             this.name = name;
-            id++;
+            id = ++counter;
+        }
+
+        int show_id() {
+            return this.id;
         }
 
         // getters and setters
@@ -95,6 +99,10 @@ public class Basics {
 
         void speak() {
             System.out.println("i am person with name : " + this.name);
+        }
+
+        boolean is_equals(Person other) {
+            return this.id == other.id;
         }
     }
 
@@ -134,13 +142,11 @@ public class Basics {
     // inheritance
     private static class Teacher extends Person {
         private String lesson;
-        private int id;
-        private static int counter = 0;
 
         public Teacher(int age, String name, String lesson) {
             super(age, name);
             this.lesson = lesson;
-            this.id = ++counter;
+
         }
 
         @Override
@@ -157,9 +163,8 @@ public class Basics {
             System.out.println("i am teaching ! with name: " + super.getName());
         }
 
-        boolean is_equals(Teacher other) {
-            // my equals check  (actually have an object equals already) for my testing
-            return this.id == other.id;
+        int get_id() {
+            return super.get_id();
         }
     }
 
