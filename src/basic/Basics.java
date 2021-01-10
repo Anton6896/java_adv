@@ -31,7 +31,8 @@ public class Basics {
 //        Teacher object equality check
         Teacher t1 = new Teacher(23, "fff", "ggg");
         Teacher t2 = new Teacher(32, "ttt", "AAA");
-        System.out.println("t1 id:" + t1.get_id() + " -- t2 id:" + t2.get_id());
+//        System.out.println("t1 id:" + t1.get_id() + " -- t2 id:" + t2.get_id());
+        System.out.format("t1 : %d <>  t2 : %d\n", t1.get_id(), t2.get_id());
         System.out.println("teacher equality : " + (t1.is_equals(t2)));
 
 
