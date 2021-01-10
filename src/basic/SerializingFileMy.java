@@ -21,7 +21,7 @@ public class SerializingFileMy {
 
 //        working with data
         List<Person_ser> bpl = new LinkedList<>();  // get data from file (empty)
-        List<Person_ser> pl = new LinkedList<>(); // data in
+        List<Person_ser> pl = new LinkedList<>();   // data in
 
         pl.add(new Person_ser("person 1"));
         pl.add(new Person_ser("person 2"));
@@ -35,6 +35,8 @@ public class SerializingFileMy {
 
 
     }
+
+//    can wright list it self ! as object !!!!!
 
 
     static void serialize_me(File file, List<Person_ser> list) throws IOException {

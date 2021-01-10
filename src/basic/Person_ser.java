@@ -9,6 +9,9 @@ public class Person_ser implements Serializable {
     private int id;
     private String name;
 
+//    field that stay here not for serialization
+    private transient int stay = 43242;
+
     public Person_ser(String name) {
         id = ++co;
         this.name = name;
