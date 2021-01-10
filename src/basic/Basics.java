@@ -12,17 +12,35 @@ import java.util.Random;
 public class Basics {
 
     public static void main(String[] args) {
+// basic data , to remember :
 
         int a = 123;
-        long b = a; // auto
+        double b = a; // auto
         int c = (int) b; // must specify  !!
+
+//        basic primitive equality:
+        int g = 1, h = 2;
+        System.out.println("integer equality : " + (g == h));
+//        object equality -> .equals() method
+        String s1 = "abc";
+        String s3 = "abc";
+        String s2 = "def";
+        System.out.println("object equality : " + (s1.equals(s2)));
+        System.out.println("object equality : " + (s1.equals(s3)));
+
+//        Teacher object equality check
+        Teacher t1 = new Teacher(23,"fff", "ggg");
+        Teacher t2 = new Teacher(32,"ttt", "AAA");
+        System.out.println("teacher equality : " + (t1.is_equals(t2)));
+
+
+
 
 //        person_tester();
 //        str_testing();
-//        teacher_tester();
+        teacher_tester();
 //        interface_testing();
-
-        generics_tester();
+//        generics_tester();
 
 
     }
@@ -116,10 +134,13 @@ public class Basics {
     // inheritance
     private static class Teacher extends Person {
         private String lesson;
+        private int id;
+        private static int counter = 0;
 
         public Teacher(int age, String name, String lesson) {
             super(age, name);
             this.lesson = lesson;
+            this.id = ++counter;
         }
 
         @Override
@@ -134,6 +155,11 @@ public class Basics {
 
         void teach() {
             System.out.println("i am teaching ! with name: " + super.getName());
+        }
+
+        boolean is_equals(Teacher other) {
+            // my equals check  (actually have an object equals already) for my testing
+            return this.id == other.id;
         }
     }
 
@@ -230,7 +256,6 @@ public class Basics {
 
 
         //////////////   wild card //////////////
-
 
 
     }

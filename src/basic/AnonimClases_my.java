@@ -1,6 +1,7 @@
 package basic;
 
-interface SomeAnonymousClass {
+
+interface SomeAnonymousClass {  // class for one time implementation
     void eat();
 
     void connection(int type);

@@ -43,8 +43,8 @@ public class FileUsingClass {
             System.out.println("test text first line : ");
             System.out.println(text_l.get(0));
 
-            String[] words = text_l.get(0).split(" ");
             System.out.println("split words from firs line : ");
+            String[] words = text_l.get(0).split(" ");
             for (String s : words) {
                 System.out.print(s + " | ");
             }
