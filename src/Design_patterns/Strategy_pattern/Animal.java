@@ -6,8 +6,8 @@ public class Animal {
     private static int count = 0;
     private int id;
 
-
-    protected Flys fly_type;  // using interface
+    // using interface to adjust behavior
+    protected Flys fly_type;
 
     Animal(String name_) {
         name = name_;
@@ -36,7 +36,7 @@ public class Animal {
 
 
     //    dynamic set of object behavior !  ===========================
-    public String is_flying() {
+    public String show_ability() {
         return fly_type.fly();
     }
 

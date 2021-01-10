@@ -10,3 +10,7 @@ Instructor Nail Alishev  (Наиль Алишев) all in rus leng ::
 
 --- data struct  -> freeCodeCamp.org 
 # https://www.youtube.com/watch?v=RBSGKlAvoiM&t=2207s&ab_channel=freeCodeCamp.org
+
+
+--- design patterns by Derek Banas
+# https://www.youtube.com/watch?v=-NCgRD9-C6o&list=PLF206E906175C7E07&index=3&ab_channel=DerekBanas

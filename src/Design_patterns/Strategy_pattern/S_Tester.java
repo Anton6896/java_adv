@@ -16,10 +16,12 @@ public class S_Tester {
 
         System.out.println(doggy);
         System.out.println(birdy);
-        System.out.println("doggy : " + doggy.is_flying());
-        System.out.println("birdy : " + birdy.is_flying());
+
+        System.out.println("doggy : " + doggy.show_ability());
+
+        System.out.println("birdy : " + birdy.show_ability());
         birdy.set_fly_ability(new ItDidFlays());
-        System.out.println("birdy (change behavior): " + birdy.is_flying());
+        System.out.println("birdy (change behavior): " + birdy.show_ability());
 
 
 
