@@ -8,4 +8,5 @@ public interface Subject {
     void register(Observer o);
     void un_register(Observer o);
     void notify_observer();
+
 }

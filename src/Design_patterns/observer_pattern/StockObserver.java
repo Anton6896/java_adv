@@ -28,6 +28,7 @@ public class StockObserver implements Observer {
 
 //        print all data (inner use)
         show_price();
+        // send_email() or other updated things for this observer_id !!
     }
 
     private void show_price() {

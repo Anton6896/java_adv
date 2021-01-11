@@ -30,17 +30,17 @@ public class StockGrabber implements Subject {
         observers_list.forEach(observer -> observer.update(ibm_price, aapl_price, goog_price));
     }
 
-    public void set_Ibm_price(double new_ibm_price) {
+    public void set_ibm_price(double new_ibm_price) {
         this.ibm_price = new_ibm_price;
         notify_observer();
     }
 
-    public void set_Aapl_price(double new_aapl_price) {
+    public void set_aapl_price(double new_aapl_price) {
         this.aapl_price = new_aapl_price;
         notify_observer();
     }
 
-    public void set_Goog_price(double new_goog_price) {
+    public void set_goog_price(double new_goog_price) {
         this.goog_price = new_goog_price;
         notify_observer();
     }
