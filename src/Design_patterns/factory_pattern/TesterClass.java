@@ -2,13 +2,24 @@ package Design_patterns.factory_pattern;
 
 import java.util.Scanner;
 
+/**
+ * hide all implementation from the user
+ * user creating factory :
+ * EnemyShipFactory -> new factory.makeEnemyShip(typeOf);
+ *
+ * and dynamic create the object that depend on -> user needs <-
+ */
 public class TesterClass {
 
     public static void doSome(EnemyShip ship) {
 //        using object that war return from factory
-        ship.displayEnemyShip();
-        ship.followingAnHero();
-        ship.enemyShipShutting();
+        if (ship != null) {
+            ship.displayEnemyShip();
+            ship.followingAnHero();
+            ship.enemyShipShutting();
+        } else {
+            System.out.printf("ship : U / R / B");
+        }
     }
 
     public static void main(String[] args) {
@@ -21,12 +32,7 @@ public class TesterClass {
         if (scan.hasNextLine()) {
             String typeOf = scan.nextLine(); // get user needs
             enemyShip = factory.makeEnemyShip(typeOf);  // return the appropriate response
-
-            if (enemyShip != null) {
-                doSome(enemyShip);
-            } else {
-                System.out.printf("ship : U / R / B");
-            }
+            doSome(enemyShip);
         }
     }
 }
