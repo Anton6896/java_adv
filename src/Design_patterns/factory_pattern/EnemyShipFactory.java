@@ -13,7 +13,6 @@ public class EnemyShipFactory {
         // default -> null;
         // };
 
-        EnemyShip ship = null;
         switch (newShipType) {
             case "U":
                 return new UFOEnemyShip();

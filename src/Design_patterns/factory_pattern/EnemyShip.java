@@ -2,7 +2,7 @@ package Design_patterns.factory_pattern;
 
 public abstract class EnemyShip {
     private String name;
-    private double speed, x_direction, y_direction, damage_amount;
+    private double damage_amount;
 
 //    ========
 

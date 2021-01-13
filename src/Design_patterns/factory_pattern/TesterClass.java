@@ -24,7 +24,7 @@ public class TesterClass {
 
     public static void main(String[] args) {
         EnemyShipFactory factory = new EnemyShipFactory();
-        EnemyShip enemyShip; // this way good for testing
+        EnemyShip enemyShip; // <- abstract sheep
 
         Scanner scan = new Scanner(System.in);
         System.out.println("what type of ship : U / R / B");

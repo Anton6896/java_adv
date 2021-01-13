@@ -13,10 +13,10 @@ public class UFOEnemyShip extends EnemyShip {
     @Override
     void makeShip() {
         System.out.println("making enemy (regular ship) ship - " + getName());
-//        esWeapon = shipFactory.addsGun();
-//        esEngine = shipFactory.addsEngine();
+        esWeapon = shipFactory.addsGun();
+        esEngine = shipFactory.addsEngine();
 
-        setEsWeapon(new ESUFOGun());
-        setEsEngine(new ESUFOEngine());
+//        setEsWeapon(new ESUFOGun());
+//        setEsEngine(new ESUFOEngine());
     }
 }
