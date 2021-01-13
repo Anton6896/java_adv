@@ -11,8 +11,8 @@ package Design_patterns.Strategy_pattern;
 
 public class S_Tester {
     public static void main(String[] args) {
-        Animal doggy = new Dog("pike");
-        Animal birdy = new Bird("pipi");
+        Animal doggy = new Dog("pike dog");
+        Animal birdy = new Bird("pipi bird");
 
         System.out.println(doggy);
 //        doggy.dif_hole() // can do that because an animal

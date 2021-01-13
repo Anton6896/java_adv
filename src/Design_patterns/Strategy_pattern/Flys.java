@@ -7,18 +7,15 @@ public interface Flys {
 }
 
 
-
-
-//// class behavior type
-class ItFlays implements Flys{
-
+//// class behavior types
+class ItFlays implements Flys {
     @Override
     public String fly() {
         return "Flying high  :) ";
     }
 }
-class ItDidFlays implements Flys{
 
+class ItDidFlays implements Flys {
     @Override
     public String fly() {
         return "cant fly at all :(";

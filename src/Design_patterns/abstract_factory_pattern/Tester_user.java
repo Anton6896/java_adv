@@ -7,12 +7,17 @@ package Design_patterns.abstract_factory_pattern;
 
 public class Tester_user {
     public static void main(String[] args) {
-        EnemyShipBuilding makeUfo = new UFOEnemyShipBuilding();
-        EnemyShip theGrunt = makeUfo.orderTheShip("ufo");
-        System.out.println(theGrunt + "\n");
+        EnemyShipBuilding manager = new UFOShipBuilder();
 
-        EnemyShip theBoss = makeUfo.orderTheShip("ufo boss");
+        // i need some EnemySheep -> abstract sheep
+        // manager.order   -> get specific sheep
+        EnemyShip theGrunt = manager.orderTheShip("ufo");
+        EnemyShip theBoss = manager.orderTheShip("ufo boss");
+
+        System.out.println("\n"+theGrunt);
         System.out.println(theBoss);
+
+
 
     }
 }

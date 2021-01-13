@@ -1,6 +1,6 @@
 package Design_patterns.abstract_factory_pattern;
 
-public class UFOEnemyShipFactory implements EnemyShipFActory {
+public class UFOEnemyShipFactory implements EnemyShipFactory {
 
     @Override
     public ESWeapon addsGun() {

@@ -7,7 +7,7 @@ public class Animal {
     private int id;
 
     // using interface to adjust behavior
-    protected Flys fly_type;
+    protected Flys fly_type;  // <- composition
 
     Animal(String name_) {
         name = name_;

@@ -1,19 +1,21 @@
 package Design_patterns.abstract_factory_pattern;
 
 public abstract class EnemyShipBuilding {
-    // act as ordering mechanism for creating enemy_ships ( name, weapon, engine)
+    // some abstract Enemy ship call
 
     protected abstract EnemyShip makeEnemyShip(String typeOfShip);
 
     public EnemyShip orderTheShip(String typeOfShip) {
-        EnemyShip theEnemyShip = makeEnemyShip(typeOfShip);
 
-        theEnemyShip.makeShip();
-        theEnemyShip.displayEnamyShip();
-        theEnemyShip.followHeroShip();
-        theEnemyShip.enemyShipShuts();
+        // ordering the new concrete ship obj
+        EnemyShip shipObj = makeEnemyShip(typeOfShip); // -> UFOSheepBuilder()
 
-        return theEnemyShip;
+        shipObj.makeShip();
+        shipObj.displayEnamyShip();
+        shipObj.followHeroShip();
+        shipObj.enemyShipShuts();
+
+        return shipObj;
     }
 
 }

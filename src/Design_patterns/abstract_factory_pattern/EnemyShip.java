@@ -3,7 +3,8 @@ package Design_patterns.abstract_factory_pattern;
 public abstract class EnemyShip {
     private String name;
 
-    ESEngine esEngine;
+//    strategy designed implementation
+    ESEngine esEngine; // <- composition
     ESWeapon esWeapon;
 
     public String getName() {

@@ -1,8 +1,6 @@
 package Design_patterns.abstract_factory_pattern;
 
-import java.util.Locale;
-
-public class UFOEnemyShipBuilding extends EnemyShipBuilding {
+public class UFOShipBuilder extends EnemyShipBuilding {
     /**
      * waiting for the order of enemy ship by type
      * and creating the new ship
@@ -14,14 +12,19 @@ public class UFOEnemyShipBuilding extends EnemyShipBuilding {
     protected EnemyShip makeEnemyShip(String typeOfShip) {
         EnemyShip theEnemyShip = null;
 
+        /*
+        the ordering mechanism (from EnemyShipBuilding ) is calling for the appropriate obj creation
+         */
+
         if (typeOfShip.toLowerCase().equals("ufo")) {
-            EnemyShipFActory shipPartFactory = new UFOEnemyShipFactory();
-            theEnemyShip = new UFOEnemyShip(shipPartFactory);
+            // from abstract to specific UFO sheep
+            EnemyShipFactory factory = new UFOEnemyShipFactory();
+            theEnemyShip = new UFOEnemyShip(factory);
             theEnemyShip.setName("regular ship");
 
         } else if (typeOfShip.toLowerCase().equals("ufo boss")) {
-            EnemyShipFActory shipPartFactory = new UFOBossEnemyShipFactory();
-            theEnemyShip = new UFOEnemyShip(shipPartFactory);
+            EnemyShipFactory factory = new UFOBossEnemyShipFactory();
+            theEnemyShip = new UFOBossEnemyShip(factory);
             theEnemyShip.setName("Boss Ship");
         }
 

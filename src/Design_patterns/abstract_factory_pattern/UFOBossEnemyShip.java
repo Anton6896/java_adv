@@ -1,16 +1,20 @@
 package Design_patterns.abstract_factory_pattern;
 
-public class UFOBossEnemyShip extends EnemyShip {
-    EnemyShipFActory shipFActory;
 
-    public UFOBossEnemyShip(EnemyShipFActory shipFActory) {
-        this.shipFActory = shipFActory;
+/*
+ concrete Boss sheep
+ */
+public class UFOBossEnemyShip extends EnemyShip {
+    EnemyShipFactory shipFactory;
+
+    public UFOBossEnemyShip(EnemyShipFactory shipFActory) {
+        this.shipFactory = shipFActory;
     }
 
     @Override
     void makeShip() {  // EnemyShip
-        System.out.println("making ship - " + getName());
-        esWeapon = shipFActory.addsGun();
-        esEngine = shipFActory.addsEngine();
+        System.out.println("making (Boss bi one) ship - " + getName());
+        esWeapon = shipFactory.addsGun();
+        esEngine = shipFactory.addsEngine();
     }
 }
