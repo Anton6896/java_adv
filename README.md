@@ -13,3 +13,6 @@ Instructor Nail Alishev  (Наиль Алишев) all in rus leng ::
 
 --- design patterns by "Derek Banas"   <-  amazing !!
 # https://www.youtube.com/watch?v=-NCgRD9-C6o&list=PLF206E906175C7E07&index=3&ab_channel=DerekBanas
+
+--- oop design 
+# https://www.youtube.com/playlist?list=PLGLfVvz_LVvS5P7khyR4xDp7T9lCk9PgE
