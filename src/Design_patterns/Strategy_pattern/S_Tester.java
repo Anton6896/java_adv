@@ -15,18 +15,17 @@ public class S_Tester {
         Animal birdy = new Bird("pipi");
 
         System.out.println(doggy);
+//        doggy.dif_hole() // can do that because an animal
         System.out.println(birdy);
 
+        System.out.println("\nshow abilities: ");
         System.out.println("doggy : " + doggy.show_ability());
-
-
 
 //        you can manipulate the behavior of birdy.show_ability()
 //        by changing the set_fly_ability class , can do this on fly.
         System.out.println("birdy : " + birdy.show_ability());
         birdy.set_fly_ability(new ItDidFlays());
         System.out.println("birdy (change behavior): " + birdy.show_ability());
-
 
 
     }

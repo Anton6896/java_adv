@@ -7,10 +7,10 @@ public class Dog extends Animal {
     }
 
     Dog(String name_) {
-        super(name_);
+        super(name_); // send name to Animal (father)
 
-        // set default ability
-        fly_type = new ItDidFlays();
+        // set default ability  (using pattern)
+        set_fly_ability(new ItDidFlays());
     }
 
 }

@@ -8,8 +8,7 @@ public class Bird extends Animal {
 
     Bird(String name_) {
         super(name_);
-
         // set default ability
-        fly_type = new ItFlays();
+        set_fly_ability(new ItFlays());
     }
 }
