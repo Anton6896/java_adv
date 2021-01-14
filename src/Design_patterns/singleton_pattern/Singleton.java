@@ -3,6 +3,7 @@ package Design_patterns.singleton_pattern;
 import java.util.*;
 
 public class Singleton {
+    // c
     private static Singleton firstInstance = null;
     private List<Character> letters = new LinkedList<>();
 
@@ -15,7 +16,9 @@ public class Singleton {
 
     static boolean firstThread = true;
 
-    private Singleton(){}
+    private Singleton(){
+        my_chars();
+    }
 
     public static Singleton getInstance(){
 
@@ -25,7 +28,7 @@ public class Singleton {
                 firstThread = false;
 
                 try {
-                    Thread.currentThread();
+//                    Thread.currentThread();
                     Thread.sleep(1000);
                 } catch (InterruptedException e) {
                     e.printStackTrace();
