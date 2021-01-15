@@ -20,6 +20,9 @@ public class BuilderTest {
 
         System.out.println("\n----------new amazing created ");
         System.out.println(amaz1);
+        
+        
+        System.out.println("tesing");
 
     }
 }
