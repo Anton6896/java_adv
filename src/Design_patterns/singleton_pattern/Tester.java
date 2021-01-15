@@ -1,6 +1,5 @@
 package Design_patterns.singleton_pattern;
 
-import java.util.LinkedList;
 import java.util.List;
 
 public class Tester {
