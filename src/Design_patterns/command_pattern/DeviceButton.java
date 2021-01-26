@@ -1,5 +1,7 @@
 package Design_patterns.command_pattern;
 
+// class that using ad any commands that was created
+
 public class DeviceButton {
     Command command;
 

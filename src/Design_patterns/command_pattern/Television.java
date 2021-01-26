@@ -1,5 +1,7 @@
 package Design_patterns.command_pattern;
 
+// some actual device
+
 public class Television implements ElectronicDevice {
     private int volume = 10;
     private String name;
