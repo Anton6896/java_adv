@@ -17,7 +17,18 @@ public class BridgeMain {
         tv2.button_five();
         tv2.button_six();
         tv2.button_nine();
-        tv2.device_feedback();
+
+        RemoteButton dvd1 = new DVDRemoteButton(new DVDdevice(1, 5));
+        System.out.println("\ndvd devise:");
+        dvd1.button_five();
+        dvd1.button_six();
+        dvd1.button_six();
+//        dvd1.button_six();
+        dvd1.device_feedback();
+        dvd1.button_nine();
+
+
+
 
     }
 }

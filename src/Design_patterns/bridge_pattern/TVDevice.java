@@ -3,8 +3,8 @@ package Design_patterns.bridge_pattern;
 public class TVDevice extends EntertainmentDevice {
 
     public TVDevice(int device_state_, int max_settings_) {
-        super.device_state = device_state_;
-        super.max_settings = max_settings_;
+        device_state = device_state_;
+        max_settings = max_settings_;
     }
 
     @Override
@@ -18,6 +18,5 @@ public class TVDevice extends EntertainmentDevice {
         System.out.println("[TVDevice  ] -- Chanel Up  ");
         device_state++;
     }
-
 }
 

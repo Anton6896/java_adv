@@ -1,7 +1,8 @@
 package Design_patterns.bridge_pattern;
 
 public abstract class RemoteButton {
-    private EntertainmentDevice entertainmentDevice;
+
+    private final EntertainmentDevice entertainmentDevice;
 
     public RemoteButton(EntertainmentDevice entertainmentDevice) {
         this.entertainmentDevice = entertainmentDevice;
